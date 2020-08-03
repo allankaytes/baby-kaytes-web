@@ -45,7 +45,7 @@ router.post("/register", async (req, res) => {
         //     res.redirect("/games");
         // });
         const msg = {
-          from: 'noreply@babykaytes.com',
+          from: 'babykaytes@gmail.com',
           to: user.email, 
           subject: 'BabyKaytes - verify your email',
           text: ` 
