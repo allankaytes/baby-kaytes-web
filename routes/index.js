@@ -288,4 +288,10 @@ router.get("/forgot", function(req, res) {
       res.redirect('back');
     }
   });
+
+  //show rsvp
+  router.get("/rsvp", function(req, res){
+    res.render("rsvp", {page: 'rsvp'}); 
+  });
+
 module.exports = router;
