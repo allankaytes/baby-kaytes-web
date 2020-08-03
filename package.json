@@ -11,7 +11,6 @@
   "author": "AK",
   "license": "ISC",
   "dependencies": {
-    "-": "0.0.1",
     "@sendgrid/mail": "^7.2.2",
     "async": "^3.2.0",
     "body-parser": "^1.19.0",
