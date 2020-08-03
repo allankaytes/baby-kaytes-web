@@ -1,0 +1,63 @@
+<%- include("../partials/header") %>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <img class="card-img-top" src="<%= game.image %>" alt="<%= game.name %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= game.name %></h5>
+                <p>
+                    <em>Submitted by: <%= game.author.username %>,
+                        <%= moment(game.createdAt).fromNow() %></em>
+                </p>
+                <hr>
+                <p class="card-text"><%= game.description %></p>
+                <% if(currentUser && game.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                <a class="btn btn-warning" href="/games/<%= game._id %>/edit">Edit</a>
+                <form action="/games/<%= game._id %>?_method=DELETE" method="POST" class="delete-form">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                <% } %>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/games/<%= game._id %>/answers/new">Add New
+                        Answer</a>
+                </div>
+                <hr>
+                <div class="row">
+                    <% game.answers.forEach(function(answer){ %>
+                    <div class="col-md-12 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-left">
+                                    <p class="card-title"><%= answer.author.username %></p>
+                                    <p class="card-text"><%= answer.text %></p>
+                                </div>
+                                <div class="float-right">
+                                    <p><%= moment(answer.createdAt).fromNow() %></p>
+
+                                    <% if(currentUser && answer.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                                    <div class="float-right">
+                                        <a href="/games/<%=game._id%>/answers/<%=answer._id%>/edit"
+                                            class="btn btn-sm btn-warning">EDIT</a>
+                                        <form class="delete-form"
+                                            action="/games/<%=game._id%>/answers/<%=answer._id%>?_method=DELETE"
+                                            method="POST">
+                                            <button class="btn btn-sm btn-danger">DELETE</button>
+                                        </form>
+                                    </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
