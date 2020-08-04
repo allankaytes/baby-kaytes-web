@@ -11,7 +11,7 @@ var sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //root route
 router.get("/", function(req, res){
-    res.render("landing");
+    res.render("landing", {page: 'landing'});
 });
 
 // show register form
@@ -257,7 +257,7 @@ router.get("/forgot", function(req, res) {
   });
   // GET /contact
   router.get("/contact", isLoggedIn, (reg, res) => {
-    res.render("contact");
+    res.render("contact", {page: 'contact'});
   });
   // POST /contact
   router.post("/contact", async (reg, res) => {
@@ -294,4 +294,9 @@ router.get("/forgot", function(req, res) {
     res.render("rsvp", {page: 'rsvp'}); 
   });
 
+    //show rsvp
+    router.get("/registry", function(req, res){
+      res.render("registry", {page: 'registry'}); 
+    });
+  
 module.exports = router;

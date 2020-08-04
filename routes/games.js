@@ -43,7 +43,7 @@ router.get("/", function(req, res){
             if(err){
                 console.log(err);
             } else {
-                res.render("games/index",{games:allGames});
+                res.render("games/index",{games:allGames, page: 'games' });
             }
         });
     }
@@ -76,7 +76,7 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, re
 
 // NEW - show form to create new game
 router.get("/new", middleware.isLoggedIn, function(req, res){
-            res.render("games/new");
+            res.render("games/new", {page: 'games'});
 });
 
 //Show - shows more info about one game
@@ -88,7 +88,7 @@ router.get("/:id", function(req, res){
             res.redirect("back");
         } else {
             //render show template with that game
-            res.render("games/show", {game: foundGame});
+            res.render("games/show", {game: foundGame, page: 'games'});
         }
     });
 });

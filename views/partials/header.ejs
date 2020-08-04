@@ -10,12 +10,27 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="/">BabyKaytes</a>
+      <a class="navbar-brand" href="/">Zuri's Baby Shower</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'landing' ? 'active' : '' %>">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'rsvp' ? 'active' : '' %>">
+            <a href="/rsvp" class="nav-link">RSVP</a>
+          </li>
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'registry' ? 'active' : '' %>">
+            <a href="/registry" class="nav-link">Registry</a>
+          </li>
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'guests' ? 'active' : '' %>">
+            <a href="/guests" class="nav-link">Guest Book</a>
+          </li>
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'bets' ? 'active' : '' %>">
+            <a href="/bets" class="nav-link">Birthday Bets</a>
+          </li>
           <li class="nav-item <%= typeof page !== 'undefined' && page === 'games' ? 'active' : '' %>">
             <a href="/games" class="nav-link">Games</a>
           </li>
@@ -40,7 +55,7 @@
                 </li>
             <% } %>
         </ul>
-      </div> -->
+      </div>
     </nav>
     
     <div class="container">

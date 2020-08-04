@@ -5,12 +5,38 @@ body {
 .bg-dark {
     background-color: #D70081!important;
 }
-.jumbotron {
-  background-color: #EE3D97;
-  }
-  
+/* baby-list */
+.baby-list {
+  background-color: #6e3264;
+  color: #fff;
+  border-color: #632c5a;;
+}
+.baby-list:hover {
+  background-color: #ffffff;
+  color: #6e3264;
+  border-color: #ffffff;
+}
+.baby-list.focus, .baby-list:focus {
+  background-color: #ffffff;
+  color: #6e3264;
+  border-color: #632c5a;;
+  box-shadow: 0 0 0 0.2rem rgba(110,50,110,.5);
+}
+/* .baby-list:active {
+  background-color: #6e3264;
+  color: #fff;
+  border-color: #6e3264;
+} */
+
   .btn-primary {
       color: #fff;
       background-color: #840C58;
       border-color: #840C58;
   }
+
+  img {
+    vertical-align: middle;
+    border-style: none;
+    width: 32px;
+    margin-bottom: 10px;
+}

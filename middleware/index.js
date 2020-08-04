@@ -67,7 +67,7 @@ middlewareObj.isNotVerified = async function(req, res, next) {
         return res.redirect('/');
     } catch(error) {
         console.log(error);
-        req.flash('error', 'Something went wrong. Please contact us for assistance.');
+        req.flash('error', 'Please Sign Up before trying to Login');
         res.redirect('/');
     }
 }
