@@ -63,7 +63,7 @@ body {
     padding-right: 0px;
     padding-left: 0px;
 }
-img {
+img.landing-icons {
     vertical-align: middle;
     border-style: none;
     width: 32px;

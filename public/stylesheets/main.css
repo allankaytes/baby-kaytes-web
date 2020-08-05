@@ -14,7 +14,7 @@ body {
 .baby-list:hover {
   background-color: #ffffff;
   color: #6e3264;
-  border-color: #ffffff;
+  border: 2px solid #6e3264;
 }
 .baby-list.focus, .baby-list:focus {
   background-color: #ffffff;
@@ -33,10 +33,10 @@ body {
       background-color: #840C58;
       border-color: #840C58;
   }
-
-  img {
+  img.heart-icon {
     vertical-align: middle;
     border-style: none;
-    width: 32px;
-    margin-bottom: 10px;
+    width: 24px;
+    margin-bottom: 0px;
+    padding-top: 7px;
 }
