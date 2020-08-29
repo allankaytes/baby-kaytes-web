@@ -41,7 +41,7 @@ router.post("/register", async (req, res) => {
             return res.redirect("/register");
         }
         // passport.authenticate("local")(req, res, function(){
-        //     req.flash("success", "Welcome to YelpCamp " + req.body.username);
+        //     req.flash("success", "Welcome to babykaytes.com " + req.body.username);
         //     res.redirect("/games");
         // });
         const msg = {
@@ -89,7 +89,7 @@ router.get('/verify-email', async(req, res, next) => {
     await user.save();
     await req.login(user, async (err) => {
       if (err) return next(err);
-      req.flash('success', `Welcome to Yelp Camp ${user.username}`);
+      req.flash('success', `Welcome to Zuri's baby shower!!! ${user.username}`);
       const redirectUrl = req.session.redirectTo || '/';
       delete req.session.redirectTo;
       res.redirect(redirectUrl);
@@ -112,7 +112,7 @@ router.post("/login", isNotVerified, passport.authenticate("local",
         successRedirect: "/games",
         failureRedirect: "/login",
         failureFlash: true,
-        successFlash: "Welcome to YelpCamp!"
+        successFlash: "Welcome to Zuri's baby shower!!!"
     }), function(req, res){
 });
 
@@ -162,7 +162,7 @@ router.get("/forgot", function(req, res) {
           to: user.email,
           from: 'babykaytes@gmail.com',
           subject: 'Password Reset Request',
-          text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+          text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account on babaykaytes.com.\n\n' +
             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
             'http://' + req.headers.host + '/reset/' + token + '\n\n' +
             'If you did not request this, please ignore this email and your password will remain unchanged.\n'
@@ -227,7 +227,7 @@ router.get("/forgot", function(req, res) {
           from: 'babykaytes@gmail.com',
           subject: 'Your password has been changed',
           text: 'Hello,\n\n' +
-            'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+            'This is a confirmation that the password for your account ' + user.username + ' on babykaytes.com has just been changed.\n'
         };
         smtpTransport.sendMail(mailOptions, function(err) {
           req.flash('success', 'Success! Your password has been changed.');
@@ -294,7 +294,7 @@ router.get("/forgot", function(req, res) {
     res.render("rsvp", {page: 'rsvp'}); 
   });
 
-    //show rsvp
+    //show registry
     router.get("/registry", function(req, res){
       res.render("registry", {page: 'registry'}); 
     });
