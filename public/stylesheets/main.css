@@ -40,3 +40,6 @@ body {
     margin-bottom: 0px;
     padding-top: 7px;
 }
+.delete-form {
+	display: inline-block;
+}
